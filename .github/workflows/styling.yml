@@ -9,7 +9,7 @@ on:
       - main
       - dev
 jobs:
-  tests:
+  styling:
     runs-on: ubuntu-latest
     steps:
       - name: Setup PHP
