@@ -1,13 +1,10 @@
 name: Styling
 on:
-  push:
-    branches:
-      - main
-      - dev
-  pull_request:
-    branches:
-      - main
-      - dev
+  workflow_run:
+    workflows:
+      - Tests
+    types:
+      - completed
 jobs:
   styling:
     runs-on: ubuntu-latest
