@@ -11,12 +11,25 @@
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <meta name="theme-color" content="#ffffff">
     <meta name="color-scheme" content="light">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head')
 </head>
-<body>
-@yield('body')
-@stack('body')
+<body class="min-h-screen flex flex-col">
+    <x-header />
+    <main id="content">
+        @yield('body')
+    </main>
+    <x-footer />
+    @stack('body')
+
+    @auth
+        <form id="logout-form" action="{{ route('logout') }}" method="post">
+            @csrf
+        </form>
+    @endauth
 </body>
 </html>

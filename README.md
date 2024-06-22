@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/mxsgx/undisputed-department-store" target="_blank"><img src="https://raw.githubusercontent.com/mxsgx/undisputed-department-store/main/storage/app/images/logo.png" width="400" alt="Undisputed Department Logo"></a></p>
+<p align="center"><a href="https://github.com/mxsgx/undisputed-department-store" target="_blank"><img src="https://raw.githubusercontent.com/mxsgx/undisputed-department-store/main/storage/app/images/logo-full.png" width="400" alt="Undisputed Department Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/mxsgx/undisputed-department-store/blob/main/LICENSE"><img src="https://img.shields.io/github/license/mxsgx/undisputed-department-store" alt="License"></a>
