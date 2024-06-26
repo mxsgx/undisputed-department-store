@@ -28,9 +28,9 @@
         @stack('body')
 
         @auth
-            <form id="logout-form" action="{{ route('logout') }}" method="post">
-            @csrf
-        </form>
+            <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
+                @csrf
+            </form>
         @endauth
     </section>
 </body>
