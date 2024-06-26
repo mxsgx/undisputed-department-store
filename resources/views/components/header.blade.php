@@ -14,6 +14,7 @@
                 <nav class="w-full md:w-auto flex gap-4 items-center uppercase tracking-wide">
                     <a href="{{ route('home') }}" title="{{ __('Home') }}" class="p-4 w-full md:p-0 md:w-auto border-b-2 md:border-b-0 border-white">{{ __('Home') }}</a>
                     <a href="{{ route('about') }}" title="{{ __('About') }}" class="p-4 w-full md:p-0 md:w-auto border-b-2 md:border-b-0 border-white">{{ __('About') }}</a>
+                    <a href="{{ route('contact') }}" title="{{ __('Contact') }}" class="p-4 w-full md:p-0 md:w-auto border-b-2 md:border-b-0 border-white">{{ __('Contact') }}</a>
                 </nav>
                 <div class="w-full md:w-auto flex flex-col md:flex-row md:gap-4 items-center md:pl-8">
                     @auth

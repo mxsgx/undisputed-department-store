@@ -11,6 +11,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::view('/about', 'about')->name('about');
+Route::view('/contact', 'contact')->name('contact');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginPage'])->name('login');
