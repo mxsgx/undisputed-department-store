@@ -1,9 +1,10 @@
 @extends('layouts.base')
 
 @section('title', __('About'))
+
 @section('body')
-    <div class="flex justify-center py-8 px-4">
-        <div class="container flex flex-col gap-4 text-justify">
+    <section class="flex justify-center py-8 px-4">
+        <div class="container flex flex-col gap-4 text-lg text-justify">
             <div class="flex flex-col gap-8 items-center justify-center py-4">
                 <img src="{{ asset('images/logo-full.png') }}" class="w-96" alt="{{ config('app.name') }}">
                 <h1 class="text-4xl uppercase font-bold tracking-wide">{{ __('About') }}</h1>
@@ -14,5 +15,5 @@
             <p>Nulla nibh enim, volutpat quis sapien et, maximus scelerisque augue. Mauris luctus vel erat eget condimentum. Maecenas dictum augue eget elit malesuada, ut dignissim tellus porttitor. Etiam vulputate quam eu lacus euismod, ac convallis orci luctus. Nulla sollicitudin facilisis neque lobortis posuere. Mauris molestie egestas ipsum eget suscipit. Ut et lorem luctus, auctor mauris vitae, hendrerit ex.</p>
             <p>Best Regards,<br><b>{{ config('app.name') }}</b></p>
         </div>
-    </div>
+    </section>
 @endsection
