@@ -6,6 +6,9 @@
                 <p class="text-md tracking-wide">Jejeran II, Wonokromo, Pleret, Bantul, Yogyakarta</p>
             </div>
             <div class="flex flex-col gap-4">
+                <nav class="flex gap-4 font-medium tracking-wide">
+                    <a href="{{ route('how-to-order') }}" title="{{ __('How to Order') }}">{{ __('How to Order') }}</a>
+                </nav>
                 <div class="flex gap-4 justify-end">
                     <a href="https://www.instagram.com/undsptd.dept" title="{{ __('Find us on Instagram') }}" target="_blank">
                         <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg>
