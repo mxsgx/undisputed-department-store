@@ -13,6 +13,7 @@ Route::get('/', function () {
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
 Route::view('/how-to-order', 'how-to-order')->name('how-to-order');
+Route::view('/order-tracking', 'order-tracking')->name('order-tracking');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginPage'])->name('login');
