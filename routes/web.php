@@ -10,6 +10,8 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::view('/about', 'about')->name('about');
+
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginPage'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);

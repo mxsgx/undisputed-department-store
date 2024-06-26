@@ -13,6 +13,7 @@
             <div class="border-2 md:border-0 ring-white hidden w-full md:w-auto md:flex flex-col md:flex-row justify-start md:justify-end md:gap-4 font-medium items-start md:items-center" id="navigation">
                 <nav class="w-full md:w-auto flex gap-4 items-center uppercase tracking-wide">
                     <a href="{{ route('home') }}" title="{{ __('Home') }}" class="p-4 w-full md:p-0 md:w-auto border-b-2 md:border-b-0 border-white">{{ __('Home') }}</a>
+                    <a href="{{ route('about') }}" title="{{ __('About') }}" class="p-4 w-full md:p-0 md:w-auto border-b-2 md:border-b-0 border-white">{{ __('About') }}</a>
                 </nav>
                 <div class="w-full md:w-auto flex flex-col md:flex-row md:gap-4 items-center md:pl-8">
                     @auth
