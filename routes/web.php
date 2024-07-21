@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('/admin')->group(function () {
         Route::get('/', DashboardController::class)->name('dashboard')->middleware('role:admin,owner');
-        Route::view('/categories', 'admin.under-development')->name('categories.index');
+        Route::view('/categories', 'admin.category.index')->name('categories.index');
         Route::view('/products', 'admin.under-development')->name('products.index');
         Route::view('/orders', 'admin.under-development')->name('orders.index');
         Route::view('/customers', 'admin.under-development')->name('customers.index');
