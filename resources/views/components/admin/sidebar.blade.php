@@ -4,13 +4,13 @@
 >
     <div class="flex flex-col gap-4 px-4">
         <a
-            href="{{ route("home") }}"
             class="flex items-center justify-center gap-2 py-8"
+            href="{{ route("home") }}"
         >
             <img
+                class="h-16 w-16"
                 src="{{ asset("images/logo-icon.png") }}"
                 alt="{{ config("app.name") }}"
-                class="h-16 w-16"
             />
         </a>
         <nav class="flex flex-col">
@@ -29,7 +29,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-layout-dashboard"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
@@ -66,7 +65,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-tags"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
@@ -98,7 +96,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-shirt"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
@@ -126,7 +123,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
@@ -155,7 +151,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-user-dollar"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
@@ -186,7 +181,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-users"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
@@ -204,9 +198,9 @@
     </div>
     <div class="flex items-center justify-center py-8">
         <a
-            href="#"
             class="flex rotate-90 border-2 border-white p-4 duration-150 ease-linear hover:bg-white hover:text-black group-hover:rotate-0"
             id="menu"
+            href="#"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +212,6 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
             >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M15 6l-6 6l6 6" />

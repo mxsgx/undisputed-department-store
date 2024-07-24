@@ -6,29 +6,29 @@
         <title>
             @yield("title", __("Welcome")) - {{ config("app.name") }}
         </title>
-        <link rel="shortcut icon" href="{{ asset("favicon.ico") }}" />
+        <link href="{{ asset("favicon.ico") }}" rel="shortcut icon" />
         <link
+            href="{{ asset("apple-touch-icon.png") }}"
             rel="apple-touch-icon"
             sizes="180x180"
-            href="{{ asset("apple-touch-icon.png") }}"
         />
         <link
-            rel="icon"
             type="image/png"
-            sizes="32x32"
             href="{{ asset("favicon-32x32.png") }}"
+            rel="icon"
+            sizes="32x32"
         />
         <link
-            rel="icon"
             type="image/png"
-            sizes="16x16"
             href="{{ asset("favicon-16x16.png") }}"
+            rel="icon"
+            sizes="16x16"
         />
-        <link rel="manifest" href="{{ asset("site.webmanifest") }}" />
+        <link href="{{ asset("site.webmanifest") }}" rel="manifest" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="color-scheme" content="light" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
@@ -41,6 +41,7 @@
         <x-admin.sidebar />
         <section class="flex grow flex-col" id="content">
             <x-admin.header />
+            <livewire:alerts />
             @yield("body")
             <x-admin.footer />
 

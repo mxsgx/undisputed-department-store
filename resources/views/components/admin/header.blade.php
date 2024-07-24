@@ -2,9 +2,9 @@
     class="flex w-full justify-end border-b-2 border-b-[#111111] bg-black px-4 py-6 text-white"
 >
     <a
+        class="flex items-center justify-center gap-2 p-2"
         href="{{ route("logout") }}"
         title="{{ __("Logout") }}"
-        class="flex items-center justify-center gap-2 p-2"
         onclick="event.preventDefault();document.getElementById('logout-form').submit();"
     >
         <span class="text-left align-middle font-medium uppercase">
@@ -20,7 +20,6 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-logout"
         >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path

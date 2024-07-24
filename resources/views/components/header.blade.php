@@ -7,21 +7,21 @@
             class="flex flex-col items-center justify-between gap-4 md:flex-row"
         >
             <div class="flex w-full items-center justify-between md:w-auto">
-                <a href="{{ route("home") }}" class="h-16">
+                <a class="h-16" href="{{ route("home") }}">
                     <img
-                        src="{{ asset("images/logo-icon.png") }}"
-                        alt="{{ config("app.name") }}"
                         class="h-full"
                         id="logo-icon"
+                        src="{{ asset("images/logo-icon.png") }}"
+                        alt="{{ config("app.name") }}"
                     />
                     <img
-                        src="{{ asset("images/logo-text.png") }}"
-                        alt="{{ config("app.name") }}"
                         class="hidden h-full"
                         id="logo-text"
+                        src="{{ asset("images/logo-text.png") }}"
+                        alt="{{ config("app.name") }}"
                     />
                 </a>
-                <a href="#" class="text-right md:hidden" id="menu">
+                <a class="text-right md:hidden" id="menu" href="#">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -32,7 +32,6 @@
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
                     >
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M4 6l16 0" />
@@ -49,23 +48,23 @@
                     class="flex w-full items-center gap-4 uppercase tracking-wide md:w-auto"
                 >
                     <a
+                        class="w-full border-b-2 border-white p-4 md:w-auto md:border-b-0 md:p-0"
                         href="{{ route("home") }}"
                         title="{{ __("Home") }}"
-                        class="w-full border-b-2 border-white p-4 md:w-auto md:border-b-0 md:p-0"
                     >
                         {{ __("Home") }}
                     </a>
                     <a
+                        class="w-full border-b-2 border-white p-4 md:w-auto md:border-b-0 md:p-0"
                         href="{{ route("about") }}"
                         title="{{ __("About") }}"
-                        class="w-full border-b-2 border-white p-4 md:w-auto md:border-b-0 md:p-0"
                     >
                         {{ __("About") }}
                     </a>
                     <a
+                        class="w-full border-b-2 border-white p-4 md:w-auto md:border-b-0 md:p-0"
                         href="{{ route("contact") }}"
                         title="{{ __("Contact") }}"
-                        class="w-full border-b-2 border-white p-4 md:w-auto md:border-b-0 md:p-0"
                     >
                         {{ __("Contact") }}
                     </a>
@@ -76,9 +75,9 @@
                     @auth
                         @if (auth()->user()->role === \App\Enums\UserRole::ADMIN)
                             <a
+                                class="flex w-full gap-2 p-4 md:w-auto md:p-0"
                                 href="{{ route("dashboard") }}"
                                 title="{{ __("Visit Dashboard") }}"
-                                class="flex w-full gap-2 p-4 md:w-auto md:p-0"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +89,6 @@
                                     stroke-width="2"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-dashboard"
                                 >
                                     <path
                                         stroke="none"
@@ -112,9 +110,9 @@
                         @endif
 
                         <a
+                            class="flex w-full gap-2 p-4 md:w-auto md:p-0"
                             href="{{ route("logout") }}"
                             title="{{ __("Logout") }}"
-                            class="flex w-full gap-2 p-4 md:w-auto md:p-0"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                         >
                             <svg
@@ -127,7 +125,6 @@
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                class="icon icon-tabler icons-tabler-outline icon-tabler-logout-2"
                             >
                                 <path
                                     stroke="none"
@@ -150,9 +147,9 @@
 
                     @guest
                         <a
+                            class="flex w-full gap-2 p-4 md:w-auto md:p-0"
                             href="{{ route("login") }}"
                             title="{{ __("Login as Member") }}"
-                            class="flex w-full gap-2 p-4 md:w-auto md:p-0"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +161,6 @@
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                class="icon icon-tabler icons-tabler-outline icon-tabler-user"
                             >
                                 <path
                                     stroke="none"

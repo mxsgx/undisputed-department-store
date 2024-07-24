@@ -13,7 +13,10 @@
             </div>
         </div>
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <x-admin.summary-card :title="__('Products')" :count="0">
+            <x-admin.summary-card
+                :title="__('Products')"
+                :count="$product_count"
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="56"
@@ -24,7 +27,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-shirt"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
@@ -46,7 +48,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-tags"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
@@ -69,7 +70,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
@@ -89,7 +89,6 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-user-dollar"
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />

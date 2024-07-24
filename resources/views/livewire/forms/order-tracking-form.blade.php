@@ -3,17 +3,17 @@
         {{ __("Please enter Order ID to track your order.") }}
     </p>
     <div class="flex flex-col gap-2">
-        <label for="order" class="hidden font-medium">
+        <label class="hidden font-medium" for="order">
             {{ __("Order ID") }}
         </label>
         <input
-            type="text"
-            name="order_id"
-            id="order-id"
-            wire:model.blur="order_id"
-            placeholder="{{ __("#") }}"
             class="border-2 border-black px-6 py-4 font-medium outline-none"
+            id="order-id"
+            name="order_id"
+            type="text"
+            placeholder="{{ __("#") }}"
             required
+            wire:model.blur="order_id"
         />
         @error("order_id")
             <span class="text-red-600">{{ $message }}</span>
@@ -21,9 +21,9 @@
     </div>
     <div class="flex items-center">
         <button
+            class="border-2 border-black bg-black px-6 py-4 font-medium uppercase tracking-wide text-white duration-100 ease-linear hover:bg-white hover:text-black"
             type="button"
             disabled
-            class="border-2 border-black bg-black px-6 py-4 font-medium uppercase tracking-wide text-white duration-100 ease-linear hover:bg-white hover:text-black"
         >
             {{ __("Track") }}
         </button>

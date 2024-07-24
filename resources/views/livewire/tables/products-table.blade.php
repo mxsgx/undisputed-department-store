@@ -9,8 +9,10 @@
                 id="search"
                 name="search"
                 type="text"
-                placeholder="{{ __("Search category...") }}"
+                placeholder="{{ __("Search products...") }}"
                 wire:model.live.debounce.500ms="search"
+                wire:loading.attr="disabled"
+                wire:loading.class="opacity-50"
             />
         </div>
     </div>
@@ -19,6 +21,9 @@
             class="border border-black bg-black text-sm font-bold uppercase tracking-wide text-white"
         >
             <tr>
+                <th class="px-4 py-3 text-center">
+                    <span class="sr-only">{{ __("Image") }}</span>
+                </th>
                 <th class="px-4 py-3 text-left" scope="col">
                     {{ __("Name") }}
                 </th>
@@ -26,10 +31,13 @@
                     {{ __("Slug") }}
                 </th>
                 <th class="px-4 py-3 text-left" scope="col">
-                    {{ __("Type") }}
+                    {{ __("SKU") }}
                 </th>
                 <th class="px-4 py-3 text-center" scope="col">
-                    {{ __("Product Count") }}
+                    {{ __("Stock Status") }}
+                </th>
+                <th class="px-4 py-3 text-center" scope="col">
+                    {{ __("Price") }}
                 </th>
                 <th class="px-4 py-3 text-center" scope="col">
                     {{ __("Action") }}
@@ -37,20 +45,20 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($categories as $category)
-                <livewire:tables.categories-table-row
-                    :$category
-                    :key="'category-'.$category->id"
+            @forelse ($products as $product)
+                <livewire:tables.products-table-row
+                    :$product
+                    :key="'product-'.$product->id"
                 />
             @empty
                 <tr class="border border-black">
-                    <td class="px-4 py-3 text-center" colspan="5">
-                        {{ __("Empty category") }}
+                    <td class="px-4 py-3 text-center" colspan="7">
+                        {{ __("Empty products") }}
                     </td>
                 </tr>
             @endforelse
         </tbody>
     </table>
 
-    {{ $categories->links("livewire::tailwind") }}
+    {{ $products->links("livewire::tailwind") }}
 </div>

@@ -7,49 +7,49 @@
         {{ __("Don’t forget to save your password in safe place and don’t share your password to other.") }}
     </p>
     <div class="flex flex-col gap-2">
-        <label for="email" class="hidden font-medium">
+        <label class="hidden font-medium" for="email">
             {{ __("Email address") }}
         </label>
         <input
-            type="email"
-            name="email"
-            id="email"
-            wire:model.blur="email"
-            placeholder="{{ __("Your email address") }}"
             class="border-2 border-black px-6 py-4 font-medium outline-none"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="{{ __("Your email address") }}"
             required
+            wire:model.blur="email"
         />
         @error("email")
             <span class="text-red-600">{{ $message }}</span>
         @enderror
     </div>
     <div class="flex flex-col gap-2">
-        <label for="password" class="hidden font-medium">
+        <label class="hidden font-medium" for="password">
             {{ __("New password") }}
         </label>
         <input
-            type="password"
-            name="password"
-            id="password"
-            wire:model.blur="password"
-            placeholder="{{ __("New password") }}"
             class="border-2 border-black px-6 py-4 font-medium outline-none"
+            id="password"
+            name="password"
+            type="password"
+            placeholder="{{ __("New password") }}"
             required
+            wire:model.blur="password"
         />
         @error("password")
             <span class="text-red-600">{{ $message }}</span>
         @enderror
     </div>
     <div class="flex flex-col gap-2">
-        <label for="password-confirmation" class="hidden font-medium">
+        <label class="hidden font-medium" for="password-confirmation">
             {{ __("Re-type new password") }}
         </label>
         <input
-            type="password"
-            name="password_confirmation"
-            id="password-confirmation"
-            placeholder="{{ __("Re-type new password") }}"
             class="border-2 border-black px-6 py-4 font-medium outline-none"
+            id="password-confirmation"
+            name="password_confirmation"
+            type="password"
+            placeholder="{{ __("Re-type new password") }}"
             required
         />
     </div>
@@ -57,8 +57,8 @@
         @csrf
 
         <button
-            type="submit"
             class="border-2 border-black bg-black px-6 py-4 font-medium uppercase tracking-wide text-white duration-100 ease-linear hover:bg-white hover:text-black"
+            type="submit"
         >
             {{ __("Reset Password") }}
         </button>

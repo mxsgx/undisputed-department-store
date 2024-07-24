@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\EditProductController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -30,7 +31,9 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/admin')->group(function () {
         Route::get('/', DashboardController::class)->name('dashboard')->middleware('role:admin,owner');
         Route::view('/categories', 'admin.category.index')->name('categories.index');
-        Route::view('/products', 'admin.under-development')->name('products.index');
+        Route::view('/products', 'admin.product.index')->name('products.index');
+        Route::view('/products/create', 'admin.product.create')->name('products.create');
+        Route::get('/products/{product}', EditProductController::class)->name('products.edit');
         Route::view('/orders', 'admin.under-development')->name('orders.index');
         Route::view('/customers', 'admin.under-development')->name('customers.index');
         Route::view('/users', 'admin.under-development')->name('users.index');

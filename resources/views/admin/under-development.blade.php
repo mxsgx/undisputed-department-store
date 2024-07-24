@@ -15,7 +15,6 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-barrier-block"
             >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path

@@ -7,9 +7,9 @@
         >
             <div class="flex flex-col gap-8">
                 <img
+                    class="w-96"
                     src="{{ asset("images/logo-full-no-background.png") }}"
                     alt="{{ config("app.name") }}"
-                    class="w-96"
                 />
                 <p class="text-md tracking-wide">
                     Jejeran II, Wonokromo, Pleret, Bantul, Yogyakarta
@@ -48,7 +48,6 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path
@@ -76,7 +75,6 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-shopee"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path
@@ -106,7 +104,6 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path

@@ -7,8 +7,8 @@
         <div class="container flex flex-col gap-4 text-justify text-lg">
             <div class="flex flex-col items-center justify-center gap-8 py-4">
                 <img
-                    src="{{ asset("images/logo-full.png") }}"
                     class="w-96"
+                    src="{{ asset("images/logo-full.png") }}"
                     alt="{{ config("app.name") }}"
                 />
                 <h1 class="text-4xl font-bold uppercase tracking-wide">

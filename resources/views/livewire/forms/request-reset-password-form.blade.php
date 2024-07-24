@@ -7,17 +7,17 @@
         {{ __("Please enter your email address below. You will receive a link to create a new password via email.") }}
     </p>
     <div class="flex flex-col gap-2">
-        <label for="email" class="hidden font-medium">
+        <label class="hidden font-medium" for="email">
             {{ __("Email address") }}
         </label>
         <input
-            type="email"
-            name="email"
-            id="email"
-            wire:model.blur="email"
-            placeholder="{{ __("Email address") }}"
             class="border-2 border-black px-6 py-4 font-medium outline-none"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="{{ __("Email address") }}"
             required
+            wire:model.blur="email"
         />
         @error("email")
             <span class="text-red-600">{{ $message }}</span>
@@ -27,8 +27,8 @@
         @csrf
 
         <button
-            type="submit"
             class="border-2 border-black bg-black px-6 py-4 font-medium uppercase tracking-wide text-white duration-100 ease-linear hover:bg-white hover:text-black"
+            type="submit"
         >
             {{ __("Request Reset Password") }}
         </button>
