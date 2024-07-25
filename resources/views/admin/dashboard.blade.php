@@ -59,7 +59,10 @@
                     <path d="M7 10h-.01" />
                 </svg>
             </x-admin.summary-card>
-            <x-admin.summary-card :title="__('Pending Orders')" :count="0">
+            <x-admin.summary-card
+                :title="__('Pending Orders')"
+                :count="$pending_order_count"
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="56"
@@ -78,7 +81,10 @@
                     <path d="M6 5l14 1l-1 7h-13" />
                 </svg>
             </x-admin.summary-card>
-            <x-admin.summary-card :title="__('Completed Orders')" :count="0">
+            <x-admin.summary-card
+                :title="__('Completed Orders')"
+                :count="$completed_order_count"
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="56"

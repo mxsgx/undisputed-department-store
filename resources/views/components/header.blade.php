@@ -1,5 +1,5 @@
 <header
-    class="flex w-full items-center justify-center bg-black px-6 py-4 text-white"
+    class="z-50 flex w-full items-center justify-center bg-black px-6 py-4 text-white"
     id="header"
 >
     <div class="container">
@@ -45,24 +45,31 @@
                 id="navigation"
             >
                 <nav
-                    class="flex w-full items-center gap-4 uppercase tracking-wide md:w-auto"
+                    class="flex w-full flex-col items-center uppercase tracking-wide md:w-auto md:flex-row md:gap-4"
                 >
                     <a
-                        class="w-full border-b-2 border-white p-4 md:w-auto md:border-b-0 md:p-0"
+                        class="w-full border-b-2 border-b-white p-4 duration-150 ease-linear hover:border-b-white md:w-auto md:border-y-2 md:border-transparent md:p-0"
                         href="{{ route("home") }}"
                         title="{{ __("Home") }}"
                     >
                         {{ __("Home") }}
                     </a>
                     <a
-                        class="w-full border-b-2 border-white p-4 md:w-auto md:border-b-0 md:p-0"
+                        class="w-full border-b-2 border-b-white p-4 duration-150 ease-linear hover:border-b-white md:w-auto md:border-y-2 md:border-transparent md:p-0"
+                        href="{{ route("shop") }}"
+                        title="{{ __("Shop") }}"
+                    >
+                        {{ __("Shop") }}
+                    </a>
+                    <a
+                        class="w-full border-b-2 border-b-white p-4 duration-150 ease-linear hover:border-b-white md:w-auto md:border-y-2 md:border-transparent md:p-0"
                         href="{{ route("about") }}"
                         title="{{ __("About") }}"
                     >
                         {{ __("About") }}
                     </a>
                     <a
-                        class="w-full border-b-2 border-white p-4 md:w-auto md:border-b-0 md:p-0"
+                        class="w-full border-b-2 border-b-white p-4 duration-150 ease-linear hover:border-b-white md:w-auto md:border-y-2 md:border-transparent md:p-0"
                         href="{{ route("contact") }}"
                         title="{{ __("Contact") }}"
                     >
@@ -72,6 +79,8 @@
                 <div
                     class="flex w-full flex-col items-center md:w-auto md:flex-row md:gap-4 md:pl-8"
                 >
+                    <livewire:cart />
+
                     @auth
                         @if (auth()->user()->role === \App\Enums\UserRole::ADMIN)
                             <a
@@ -172,7 +181,11 @@
                                     d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"
                                 />
                             </svg>
-                            <span>{{ __("Guest") }}</span>
+                            <span
+                                class="align-middle font-medium uppercase tracking-wide"
+                            >
+                                {{ __("Guest") }}
+                            </span>
                         </a>
                     @endguest
                 </div>

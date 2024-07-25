@@ -59,12 +59,12 @@
         </div>
 
         <div
-            class="flex flex-col md:flex-row gap-2 justify-center items-center"
+            class="flex flex-col items-center justify-center gap-2 md:flex-row"
         >
-            <div class="w-full md:w-64 h-auto md:h-64 flex flex-col gap-2">
+            <div class="flex h-auto w-full flex-col gap-2 md:h-64 md:w-64">
                 @if ($image)
                     <img
-                        class="w-full h-full object-cover"
+                        class="h-full w-full object-cover"
                         src="{{ $image->temporaryUrl() }}"
                         alt="{{ __("Image preview") }}"
                     />
@@ -78,7 +78,7 @@
                     </button>
                 @else
                     <img
-                        class="w-full h-full object-cover"
+                        class="h-full w-full object-cover"
                         src="{{ $product->image->url }}"
                         alt="{{ __("Image preview") }}"
                     />
@@ -86,7 +86,7 @@
             </div>
 
             <label
-                class="w-full h-64 p-4 bg-white text-gray-500 font-semibold text-base rounded flex flex-1 flex-col items-center justify-center cursor-pointer border-2 border-gray-300 border-dashed"
+                class="flex h-64 w-full flex-1 cursor-pointer flex-col items-center justify-center rounded border-2 border-dashed border-gray-300 bg-white p-4 text-base font-semibold text-gray-500"
                 for="image"
                 x-data="{ uploading: false, progress: 0 }"
                 x-on:livewire-upload-start="uploading = true"
@@ -132,7 +132,7 @@
                     wire:model.blur="image"
                 />
                 <p
-                    class="text-xs text-center font-medium text-gray-400 mt-2"
+                    class="mt-2 text-center text-xs font-medium text-gray-400"
                     x-show="!uploading"
                 >
                     {{ __("Allowed format are .jpg and .png and recommended dimensions is 1:1 ratio.") }}
@@ -273,6 +273,57 @@
                 @endforeach
             </select>
             @error("stock_status")
+                <span class="text-red-600">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="flex flex-col gap-2">
+            <label class="flex flex-col gap-1" for="category">
+                <span class="font-medium">{{ __("Category") }}</span>
+            </label>
+            <select
+                class="border-2 border-black px-4 py-2 font-medium outline-none"
+                id="category"
+                name="category_id"
+                wire:model.change="category_id"
+            >
+                <option value="">{{ __("No Selected") }}</option>
+                @foreach ($this->categories as $category)
+                    <option
+                        value="{{ $category["id"] }}"
+                        wire:key="category-{{ $category["id"] }}"
+                        @selected(old("category_id") == $category["id"])
+                    >
+                        {{ $category["name"] }}
+                    </option>
+                @endforeach
+            </select>
+            @error("category_id")
+                <span class="text-red-600">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="flex flex-col gap-2">
+            <label class="flex flex-col gap-1" for="subcategory">
+                <span class="font-medium">{{ __("Subcategory") }}</span>
+            </label>
+            <select
+                class="border-2 border-black px-4 py-2 font-medium outline-none"
+                id="subcategory"
+                name="subcategory_id"
+                wire:model.change="subcategory_id"
+                @disabled($this->subcategories->isEmpty())
+            >
+                <option value="">{{ __("No Selected") }}</option>
+                @foreach ($this->subcategories as $category)
+                    <option
+                        value="{{ $category["id"] }}"
+                        wire:key="category-{{ $category["id"] }}"
+                        @selected(old("category_id") == $category["id"])
+                    >
+                        {{ $category["name"] }}
+                    </option>
+                @endforeach
+            </select>
+            @error("subcategory_id")
                 <span class="text-red-600">{{ $message }}</span>
             @enderror
         </div>

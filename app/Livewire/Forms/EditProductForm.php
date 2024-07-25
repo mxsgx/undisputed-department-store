@@ -4,6 +4,7 @@ namespace App\Livewire\Forms;
 
 use App\Enums\AttachmentType;
 use App\Enums\ProductStockStatus;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\View\View;
 use Livewire\Attributes\Computed;
@@ -46,6 +47,16 @@ class EditProductForm extends Component
     #[Validate('nullable|image|mimes:png,jpg|max:12288|dimensions:ratio=1/1')]
     public ?TemporaryUploadedFile $image = null;
 
+    #[Validate('nullable|integer|exists:categories,id', as: 'category')]
+    public $category_id;
+
+    #[Validate('nullable|integer|exists:categories,id', as: 'subcategory')]
+    public $subcategory_id;
+
+    public $categories;
+
+    public $subcategories;
+
     public function mount(Product $product): void
     {
         $this->product = $product;
@@ -59,7 +70,12 @@ class EditProductForm extends Component
             'stock_quantity' => $this->product->stock_quantity,
             'stock_status' => $this->product->stock_status,
             'featured' => $this->product->featured,
+            'category_id' => $this->product->category_id,
+            'subcategory_id' => $this->product->subcategory_id,
         ]);
+
+        $this->categories = Category::all(['id', 'name']);
+        $this->subcategories = Category::whereParentId($this->category_id)->get(['id', 'name']);
     }
 
     #[Computed]
@@ -93,6 +109,24 @@ class EditProductForm extends Component
         $this->stock_status = $this->stock_quantity > 0 ? ProductStockStatus::IN_STOCK : ProductStockStatus::OUT_OF_STOCK;
     }
 
+    public function updatedCategoryId(): void
+    {
+        if (! $this->category_id) {
+            $this->reset('category_id');
+        }
+
+        $this->reset('subcategory_id');
+
+        $this->subcategories = Category::whereParentId($this->category_id)->get(['id', 'name']);
+    }
+
+    public function updatedSubcategoryId(): void
+    {
+        if (! $this->subcategory_id) {
+            $this->reset('subcategory_id');
+        }
+    }
+
     public function render(): View
     {
         return view('livewire.forms.edit-product-form');
@@ -113,7 +147,7 @@ class EditProductForm extends Component
             $this->reset('image');
         }
 
-        $this->dispatch('alert', ['message' => 'Product updated successfully.']);
+        $this->dispatch('alert', ['message' => __('Product updated successfully.')]);
     }
 
     public function clearImage(): void

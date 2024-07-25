@@ -4,6 +4,7 @@ namespace App\Livewire\Forms;
 
 use App\Enums\AttachmentType;
 use App\Enums\ProductStockStatus;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
@@ -45,6 +46,22 @@ class CreateProductForm extends Component
     #[Validate('required|image|mimes:png,jpg|max:12288|dimensions:ratio=1/1')]
     public ?TemporaryUploadedFile $image = null;
 
+    #[Validate('nullable|integer|exists:categories,id', as: 'category')]
+    public $category_id;
+
+    #[Validate('nullable|integer|exists:categories,id', as: 'subcategory')]
+    public $subcategory_id;
+
+    public $categories;
+
+    public $subcategories;
+
+    public function mount(): void
+    {
+        $this->categories = Category::all(['id', 'name']);
+        $this->subcategories = collect();
+    }
+
     #[Computed]
     public function productStockStatuses(): array
     {
@@ -72,6 +89,24 @@ class CreateProductForm extends Component
         }
 
         $this->stock_status = $this->stock_quantity > 0 ? ProductStockStatus::IN_STOCK : ProductStockStatus::OUT_OF_STOCK;
+    }
+
+    public function updatedCategoryId(): void
+    {
+        if (! $this->category_id) {
+            $this->reset('category_id');
+        }
+
+        $this->reset('subcategory_id');
+
+        $this->subcategories = Category::whereParentId($this->category_id)->get(['id', 'name']);
+    }
+
+    public function updatedSubcategoryId(): void
+    {
+        if (! $this->subcategory_id) {
+            $this->reset('subcategory_id');
+        }
     }
 
     public function render(): View

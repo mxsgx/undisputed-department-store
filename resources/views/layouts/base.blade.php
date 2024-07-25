@@ -33,6 +33,10 @@
             href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
         />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+            rel="stylesheet"
+        />
 
         @vite(["resources/css/app.css", "resources/js/app.js"])
         @stack("head")
@@ -40,6 +44,12 @@
     <body class="flex min-h-screen flex-col">
         <x-header />
         <main id="content">
+            <div class="flex items-center justify-center">
+                <div class="container">
+                    <livewire:alerts />
+                </div>
+            </div>
+
             @yield("body")
         </main>
         <x-footer />

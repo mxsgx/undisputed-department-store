@@ -6,7 +6,7 @@ use App\Enums\AttachmentType;
 use App\Enums\ProductStockStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use NumberFormatter;
 
@@ -30,6 +30,8 @@ class Product extends Model
         'stock_quantity',
         'stock_status',
         'purchase_note',
+        'category_id',
+        'subcategory_id',
     ];
 
     /**
@@ -77,10 +79,14 @@ class Product extends Model
             ->where('type', AttachmentType::PRODUCT_IMAGE);
     }
 
-    public function gallery(): MorphMany
+    public function category(): BelongsTo
     {
-        return $this->morphMany(Attachment::class, 'attachable')
-            ->where('type', AttachmentType::PRODUCT_IMAGE_GALLERY);
+        return $this->belongsTo(Category::class);
+    }
+
+    public function subcategory(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'subcategory_id');
     }
 
     public function getStockStatusNameAttribute(): string
@@ -94,5 +100,10 @@ class Product extends Model
     public function getFormattedPriceAttribute(): string
     {
         return numfmt_format_currency(numfmt_create('id_ID', NumberFormatter::CURRENCY), $this->price, 'IDR');
+    }
+
+    public function getIsInStockAttribute(): bool
+    {
+        return $this->stock_status === ProductStockStatus::IN_STOCK;
     }
 }

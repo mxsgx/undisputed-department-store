@@ -2,7 +2,7 @@
     <td class="px-4 py-3 text-center">
         @if ($product->image)
             <img
-                class="w-32 mx-auto"
+                class="mx-auto w-32"
                 src="{{ $product->image->url }}"
                 alt="{{ $product->name }}"
             />
